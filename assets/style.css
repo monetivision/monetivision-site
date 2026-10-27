@@ -54,3 +54,5 @@ html,body{overflow-x:hidden;max-width:100%}
 .card b{border-bottom-color:var(--mv-gold)}
 .pill{border-color:var(--mv-gold);color:var(--mv-gold)}
 @media(max-width:900px){.hero{grid-template-columns:1fr;gap:32px}.hero-visual{transform:none}}
+/* mobil: hero etiketi küçült + header ile boşluk */
+@media(max-width:600px){.nav{padding-top:16px;padding-bottom:16px}.hero{padding-top:36px}.pill{font-size:10px;letter-spacing:1.5px;padding:4px 10px;border-width:1.5px}}
