@@ -56,3 +56,7 @@ html,body{overflow-x:hidden;max-width:100%}
 @media(max-width:900px){.hero{grid-template-columns:1fr;gap:32px}.hero-visual{transform:none}}
 /* mobil: hero etiketi küçült + header ile boşluk */
 @media(max-width:600px){.nav{padding-top:16px;padding-bottom:16px}.hero{padding-top:36px}.pill{font-size:10px;letter-spacing:1.5px;padding:4px 10px;border-width:1.5px}}
+/* hero: tek geniş buton + Türkçe diakritik için satır aralığı */
+.hero h1,.hero h1 em{line-height:1.18;padding-top:.06em}
+.btn.wide{display:block;text-align:center;width:min(100%,420px);padding:18px 26px;font-size:17px}
+@media(max-width:600px){.btn.wide{width:100%}}
