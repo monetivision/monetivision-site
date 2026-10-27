@@ -1,0 +1,16 @@
+/* Monetivision brand tokens v0.1 (taslak, 19 Eki 2026). Tek kaynak: brand/BRAND_KIT.md */
+:root{
+  --mv-ink:#0B0F10;      /* Mürekkep: koyu zemin + turkuaz üstü metin */
+  --mv-teal:#1ED8C4;     /* Monetivision turkuazı: imza renk */
+  --mv-coral:#FF6B5B;    /* Mercan: tek sıcak vurgu (çizgi, negatif rakam, 1 kelime) */
+  --mv-paper:#EAF6F4;    /* Koyu zemin üstü gövde metni */
+  --mv-white:#FFFFFF;    /* Koyu zemin üstü başlık */
+  --mv-muted:#8AA3A0;    /* Kaynak, sayfa no, ikincil metin (koyu zemin) */
+  --mv-panel:#121B1D;    /* Koyu zemin üstü kart/panel */
+  --mv-deepteal:#0E6B62; /* Turkuaz zemin üstü ikincil metin/grafik */
+  --mv-grid-dark:rgba(30,216,196,.06);
+  --mv-grid-teal:rgba(11,15,16,.07);
+  --mv-font-display:'Anton';
+  --mv-font-label:'Oswald';
+  --mv-font-body:'Inter';
+}

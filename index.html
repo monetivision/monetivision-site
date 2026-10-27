@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Monetivision · Sınırların ötesindeki şirketlere dair asıl hikâyeler</title>
+<meta name="description" content="Monetivision: şirketleri anlatan Türkçe mini belgeseller, analizler ve bülten. Yatırım tavsiyesi değildir.">
+<meta property="og:title" content="Monetivision"><meta property="og:image" content="https://www.monetivision.com/assets/banner.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://www.monetivision.com/assets/banner.jpg">
+<link rel="icon" href="assets/logo-m.jpg"><link rel="apple-touch-icon" href="assets/logo-m.jpg"><link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="nav wrap">
+  <a class="brand" href="#"><img src="assets/logo-m.jpg" alt="Monetivision logosu"><span>MONETIVISION</span></a>
+  <nav><a href="#ne">Ne yapıyoruz</a><a href="#platformlar">Platformlar</a><a href="#yazilar">Yazılar</a></nav>
+</header>
+<main>
+<section class="hero wrap">
+  <div class="hero-text">
+  <span class="pill">TÜRKÇE FİNANS · MİNİ BELGESEL</span>
+  <h1>Sınırların ötesindeki<br>şirketlere dair <em>asıl hikâyeler</em></h1>
+  <p class="lead">Dünyanın en ilginç şirketlerini rakamlarla, kaynaklarla ve sinematik bir anlatımla Türkçe anlatıyoruz. YouTube'da belgesel, Instagram'da Reels, X ve Telegram'da güncel radar, Substack'te derin analiz.</p>
+  <div class="cta"><a class="btn primary" href="https://www.youtube.com/@Monetivision" target="_blank" rel="noopener">YouTube'da izle</a><a class="btn ghost" href="https://monetivision.substack.com" target="_blank" rel="noopener">Bültene abone ol</a></div>
+  </div>
+  <figure class="hero-visual"><img src="assets/banner.jpg" alt="Monetivision logosu: yükselen mum grafikli M"></figure>
+</section>
+<section id="ne" class="wrap">
+  <h2 class="kicker">NE YAPIYORUZ</h2>
+  <div class="grid3">
+    <article class="card"><b>01</b><h3>Mini belgeseller</h3><p>Bir şirketin hikâyesini, iş modelini ve rakamlarını 6–10 dakikada anlatan Türkçe videolar.</p></article>
+    <article class="card"><b>02</b><h3>Kısa formatlar</h3><p>Reels, Shorts ve karusellerde tek bir büyük rakam, tek bir net fikir.</p></article>
+    <article class="card"><b>03</b><h3>Derin analiz</h3><p>Substack'te kaynaklı, sade ve ölçülü yazılar; Telegram'da günlük radar.</p></article>
+  </div>
+</section>
+<section id="platformlar" class="wrap">
+  <h2 class="kicker">PLATFORMLAR</h2>
+  <div class="plats">
+    <a class="plat" href="https://www.youtube.com/@Monetivision" target="_blank" rel="noopener"><span>YouTube</span><small>@Monetivision</small></a>
+    <a class="plat" href="https://www.instagram.com/monetivision/" target="_blank" rel="noopener"><span>Instagram</span><small>@monetivision</small></a>
+    <a class="plat" href="https://x.com/Monetivision" target="_blank" rel="noopener"><span>X</span><small>@Monetivision</small></a>
+    <a class="plat" href="https://t.me/monetivisionradar" target="_blank" rel="noopener"><span>Telegram</span><small>Monetivision Radar</small></a>
+    <a class="plat" href="https://monetivision.substack.com" target="_blank" rel="noopener"><span>Substack</span><small>monetivision.substack.com</small></a>
+  </div>
+</section>
+<section id="yazilar" class="wrap">
+  <h2 class="kicker">SON YAZILAR</h2>
+  <div id="articles" class="grid3"><p class="muted">Yazılar yükleniyor…</p></div>
+  <p><a class="more" href="https://monetivision.substack.com/archive" target="_blank" rel="noopener">Tüm yazılar →</a></p>
+</section>
+</main>
+<footer class="wrap">
+  <p class="disc"><strong>Yasal uyarı:</strong> Monetivision'daki içerikler yalnızca bilgilendirme amaçlıdır, <strong>yatırım tavsiyesi değildir</strong>. Burada yer alan bilgi, yorum ve tavsiyeler 6362 sayılı Sermaye Piyasası Kanunu kapsamında yatırım danışmanlığı niteliği taşımaz. Yatırım kararlarınızı kendi araştırmanıza ve yetkili kuruluşlardan alacağınız danışmanlığa dayandırın.</p>
+  <p class="muted">© <span id="y"></span> Monetivision · www.monetivision.com</p>
+</footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+fetch('data/articles.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{
+  const el=document.getElementById('articles');
+  if(!d.items||!d.items.length){el.innerHTML='<p class="muted">Henüz yazı yok.</p>';return}
+  el.innerHTML=d.items.slice(0,6).map(a=>{
+    const dt=a.date?new Date(a.date).toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'}):'';
+    const safe=/^https:\/\//.test(a.link)?a.link:'#';
+    return `<a class="post" href="${esc(safe)}" target="_blank" rel="noopener">${a.image?`<img loading="lazy" src="${esc(a.image)}" alt="">`:''}<div><time>${esc(dt)}</time><h3>${esc(a.title)}</h3><p>${esc(a.summary)}</p></div></a>`}).join('');
+}).catch(()=>{document.getElementById('articles').innerHTML='<p class="muted">Yazılar şu an yüklenemedi. <a href="https://monetivision.substack.com">Substack\'te oku →</a></p>'});
+</script>
+</body></html>
